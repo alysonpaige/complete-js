@@ -19,3 +19,26 @@ var ageTim = 56;
 var scoreJohn = heightJohn + 5 * ageJohn;
 var scoreTim = heightTim + 5 * ageTim;
 
+if (scoreJohn > scoreTim) {
+  console.log('John wins the game with ' + scoreJohn + ' points!');
+} else if (scoreTim > scoreJohn) {
+  console.log('Tim wins the game with ' + scoreTim + ' points!');
+} else if (scoreJohn === scoreTim) {
+  console.log('There is a draw.');
+}
+
+// adding an extra player
+
+var heightMary = 158;
+var ageMary = 31;
+var scoreMary = heightMary + 5 * ageMary;
+
+if (scoreJohn > scoreTim && scoreJohn > scoreMary) {
+  console.log('John wins the game with ' + scoreJohn + ' points!');
+} else if (scoreTim > scoreJohn && scoreTim > scoreMary) {
+  console.log('Tim wins the game with ' + scoreTim + ' points!');
+} else if (scoreMary > scoreJohn && scoreMary > scoreTim) {
+  console.log('Mary wins the game with ' + scoreMary + ' points!');
+} else {
+  console.log('It\'s a draw.');
+}
