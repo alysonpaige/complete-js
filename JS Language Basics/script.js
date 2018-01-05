@@ -38,27 +38,56 @@
 // alert(name + ' is a ' + age + ' year old ' + job + '. Is he married? ' + isMarried + '.');
 
 // Operators:
-var now = 2018;
-var birthYear = now - 26;
+// var now = 2018;
+// var birthYear = now - 26;
 
-birthYear = now - 26 * 2;
-// 2018 - 52, multiplied first, then subtracted = 1966
-// operator precedence: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+// birthYear = now - 26 * 2;
+// // 2018 - 52, multiplied first, then subtracted = 1966
+// // operator precedence: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 
-console.log(birthYear);
+// console.log(birthYear);
 
-var ageJohn = 30;
-var ageMark = 30;
+// var ageJohn = 30;
+// var ageMark = 30;
 
-ageJohn = ageMark = (3 + 5) * 4 - 6;
-// ageJohn = ageMark = 26
-// ageJohn = 26
+// ageJohn = ageMark = (3 + 5) * 4 - 6;
+// // ageJohn = ageMark = 26
+// // ageJohn = 26
 
-ageJohn++;
-// ageJohn = ageJohn + 1;
+// ageJohn++;
+// // ageJohn = ageJohn + 1;
 
-ageMark *= 2;
-// ageMark = ageMark * 2;
+// ageMark *= 2;
+// // ageMark = ageMark * 2;
 
-console.log(ageJohn);
-console.log(ageMark);
+// console.log(ageJohn);
+// console.log(ageMark);
+
+// If/else statements:
+var name = 'John';
+var age = 26;
+var isMarried = 'yes';
+
+if (isMarried === 'yes') {
+  console.log(name + ' is married!');
+} else {
+  console.log(name + ' will hopefully get married soon :)');
+}
+
+isMarried = true;
+
+if(isMarried) {
+  console.log('YES!');
+} else {
+  console.log('NO!');
+}
+
+if(isMarried) {
+  console.log('YES!');
+}
+
+if(23 === "23") {
+  console.log('Something to print');
+}
+
+
