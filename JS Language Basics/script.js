@@ -146,18 +146,41 @@
 
 // Statements and expressions
 // Statement (action):
-function someFun(par) {
-  // code
-}
+// function someFun(par) {
+//   // code
+// }
 
-if (x === 5) {
-  // do something
-}
+// if (x === 5) {
+//   // do something
+// }
 
-// Expression (value, outcome):
-var someFun = function(par) {
-  // code
-}
+// // Expression (value, outcome):
+// var someFun = function(par) {
+//   // code
+// }
 
-3 + 4;
-var x = 3;
+// 3 + 4;
+// var x = 3;
+
+// Arrays
+var names = ['John', 'Jane', 'Mark'];
+var years = new Array(1990, 1969, 1948);
+
+console.log(names[2]);
+
+names[1] = 'Ben';
+console.log(names);
+
+var john = ['John', 'Smith', 1990, 'designer', false];
+
+john.push('blue');
+john.unshift('Mr.');
+john.pop();
+john.shift();
+console.log(john);
+
+// alert(john.indexOf('Smith'));
+
+if (john.indexOf('teacher') === -1) {
+  console.log('John is NOT a teacher.');
+}
