@@ -186,28 +186,76 @@
 // }
 
 // Objects and properties
+// var john = {
+//   name: 'John',
+//   lastName: 'Smith',
+//   yearOfBirth: 1990,
+//   job: 'teacher',
+//   isMarried: false
+// };
+
+// console.log(john.lastName);
+// console.log(john['lastName']);
+
+// var xyz = 'job';
+// console.log(john[xyz]);
+
+// john.lastName = 'Miller';
+// john['job'] = 'programmer';
+// console.log(john);
+
+// var jane = new Object();
+// jane.name = 'Jane';
+// jane.lastName = 'Smith';
+// jane['yearOfBirth'] = 1969;
+// jane['job'] = 'retired';
+// jane['isMarried'] = true;
+// console.log(jane);
+
+// Objects and methods
+v1.0
 var john = {
   name: 'John',
   lastName: 'Smith',
   yearOfBirth: 1990,
   job: 'teacher',
-  isMarried: false
+  isMarried: false,
+  family: ['Jane', 'Mark', 'Bob'],
+  // function expression:
+  calculateAge: function() {
+    return 2018 - this.yearOfBirth;
+  }
 };
 
-console.log(john.lastName);
-console.log(john['lastName']);
+console.log(john.calculateAge(1970));
+console.log(john.calculateAge());
 
-var xyz = 'job';
-console.log(john[xyz]);
-
-john.lastName = 'Miller';
-john['job'] = 'programmer';
+var age = john.calculateAge();
+john.age = age;
 console.log(john);
 
-var jane = new Object();
-jane.name = 'Jane';
-jane.lastName = 'Smith';
-jane['yearOfBirth'] = 1969;
-jane['job'] = 'retired';
-jane['isMarried'] = true;
-console.log(jane);
+// v2.0
+var john = {
+  name: 'John',
+  lastName: 'Smith',
+  yearOfBirth: 1990,
+  job: 'teacher',
+  isMarried: false,
+  family: ['Jane', 'Mark', 'Bob'],
+  calculateAge: function() {
+    this.age = 2018 - this.yearOfBirth;
+  }
+};
+
+john.calculateAge();
+console.log(john);
+
+var mike = {
+  yearOfBirth: 1950,
+  calculateAge: function() {
+    this.age = 2018 - this.yearOfBirth;
+  }
+};
+
+mike.calculateAge();
+console.log(mike);
