@@ -15,7 +15,6 @@ Example output: [true, false, true]
 Hint: you can use a loop not only to read from an array, like y[i], but also to set values in an array, like y[i] = ... You can also use the specific array methods.
 */
 
-
 function printFullAge(years) {
   var ages = [];
   var fullAges = [];
