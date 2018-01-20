@@ -1,4 +1,4 @@
-// Hoisting in practice
+// Hoisting in practice:
 
 // function declaration (executes)
 calculateAge(1965);
@@ -27,3 +27,17 @@ function foo() {
 foo();
 console.log(age); // 23
 
+// Scoping and the scope chain:
+// lexical scoping
+var a = 'Hello!';
+first();
+
+function first() {
+  var b = 'Hi!';
+  second();
+
+  function second() {
+    var c = 'Hey!';
+    console.log(a + b + c);
+  }
+}
