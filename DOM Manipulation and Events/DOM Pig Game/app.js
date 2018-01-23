@@ -26,7 +26,13 @@ console.log(x);
 document.querySelector('.dice').style.display = 'none';
 
 document.querySelector('.btn-roll').addEventListener('click', function() {
-  // do something
+  // random number
+  var dice = Math.floor(Math.random() * 6) + 1;
+  // display the result
+  var diceDOM = document.querySelector('.dice');
+  diceDOM.style.display = 'block';
+  diceDOM.src = 'dice-' + dice + '.png';
+  // update the round score IF rolled number was NOT 1
 });
 
 
