@@ -25,3 +25,8 @@ console.log(x);
 
 document.querySelector('.dice').style.display = 'none';
 
+document.querySelector('.btn-roll').addEventListener('click', function() {
+  // do something
+});
+
+
