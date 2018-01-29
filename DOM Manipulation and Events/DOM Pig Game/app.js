@@ -9,7 +9,7 @@ GAME RULES:
 
 */
 
-var scores, roundScore, activePlayer, dice, gamePlaying;
+var scores, roundScore, activePlayer, gamePlaying;
 
 init();
 
