@@ -63,8 +63,8 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
     var input = document.querySelector('.final-score').value;
     var winningScore;
 
-    // undefined, 0, null or "" are coerced to false
-    // anything else is coerced to true
+    // undefined, 0, null or "" are COERCED to false
+    // anything else is COERCED to true
     if(input) {
       winningScore = input;
     } else {
