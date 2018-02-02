@@ -101,9 +101,25 @@ function calculateAge(el) {
   return 2018 - el;
 }
 
-var ages = arrayCalc(years, calculateAge);
-console.log(ages);
+function isFullAge(el) {
+  return el >= 18;
+}
 
+function maxHR(el) {
+  if (el >= 18 && el <= 81) {
+    return Math.round(206.9 - (0.67 * el));
+  } else {
+    return -1;
+  }
+}
+
+var ages = arrayCalc(years, calculateAge);
+var fullAges = arrayCalc(ages, isFullAge);
+var rates = arrayCalc(ages, maxHR);
+
+console.log(ages);
+console.log(fullAges);
+console.log(rates);
 
 
 
