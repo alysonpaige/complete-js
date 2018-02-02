@@ -85,7 +85,7 @@ change(age, obj);
 console.log(age);
 console.log(obj.city);
 
-// First Class Functions
+// First Class Functions: Passing functions as arguments
 var years = [1990, 1965, 1937, 2005, 1998];
 
 function arrayCalc(arr, fn) {
