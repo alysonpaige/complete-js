@@ -84,3 +84,38 @@ change(age, obj);
 
 console.log(age);
 console.log(obj.city);
+
+// First Class Functions
+var years = [1990, 1965, 1937, 2005, 1998];
+
+function arrayCalc(arr, fn) {
+  var arrResult = [];
+  for(var i = 0; i < arr.length; i++) {
+    arrResult.push(fn(arr[i]));
+  }
+  return arrResult;
+}
+
+// el = element
+function calculateAge(el) {
+  return 2018 - el;
+}
+
+var ages = arrayCalc(years, calculateAge);
+console.log(ages);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
