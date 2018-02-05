@@ -227,11 +227,39 @@ john.presentation('formal', 'morning');
 
 john.presentation.call(emily, 'friendly', 'afternoon');
 
+// john.presentation.apply(emily, ['friendly', 'afternoon']);
+// won't work, unable to take an array
 
+var johnFriendly = john.presentation.bind(john, 'friendly');
 
+johnFriendly('morning');
+johnFriendly('night');
 
+var emilyFormal = john.presentation.bind(emily, 'formal');
+emilyFormal('afternoon');
 
+var years = [1990, 1965, 1937, 2005, 1998];
 
+function arrayCalc(arr, fn) {
+  var arrResult = [];
+  for(var i = 0; i < arr.length; i++) {
+    arrResult.push(fn(arr[i]));
+  }
+  return arrResult;
+}
+
+function calculateAge(el) {
+  return 2018 - el;
+}
+
+function isFullAge(limit, el) {
+  return el >= limit;
+}
+
+var ages = arrayCalc(years, calculateAge);
+var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
+console.log(ages);
+console.log(fullJapan);
 
 
 
