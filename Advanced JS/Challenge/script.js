@@ -20,15 +20,26 @@ c) correct answer (I would use a number for this)
 7. Suppose this code would be a plugin for other programmers to use in their code. So make sure that all your code is private and doesn't interfere with the other programmers code (Hint: we learned a special technique to do exactly that).
 */
 
+// 1
 var Question = function(question, answers, correct) {
   this.question = question;
   this.answers = answers;
   this.correct = correct;
 }
 
+// 2, 3
+var q1 = new Question('What year is it?', ['1953', '1986', '2019', 'None of the above'],3);
+    
+var q2 = new Question('What TV show are the years in Question 1 referring to? HINT: Germany', ['Friends-NBC', 'Dark-Netflix', 'Breaking Bad-AMC'],1);
+  
+var q3 = new Question('Do you wish I would stop asking these questions?', ['Yes', 'No'],0);
+
+// 4
+
+
 // prototype for question to display
 // prototype for checking answers
-// new Question
+// new Question, store in array
 // randomize answers display?
 
 /*
