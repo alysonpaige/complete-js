@@ -35,12 +35,13 @@ var q2 = new Question('What TV show are the years in Question 1 referring to? HI
 var q3 = new Question('Do you wish I would stop asking these questions?', ['Yes', 'No'],0);
 
 // 4
+Question.prototype.displayQuestion = function() {
+  console.log(this.question);
+  for (var i = 0; i < this.answers.length; i++) {
+    console.log(i + ': ' + this.answers[i]);
+  }
+}
 
-
-// prototype for question to display
-// prototype for checking answers
-// new Question, store in array
-// randomize answers display?
 
 /*
 --- Expert level ---
