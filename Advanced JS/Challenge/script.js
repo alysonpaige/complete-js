@@ -42,6 +42,14 @@ Question.prototype.displayQuestion = function() {
   }
 }
 
+// 5
+Question.prototype.checkAnswer = function(answer) {
+  if (answer === this.correct) {
+    console.log('Correct!');
+  } else {
+    console.log('Incorrect. It happens, don\'t let it get to you. Please try again.');
+  }
+}
 
 /*
 --- Expert level ---
