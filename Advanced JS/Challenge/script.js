@@ -51,6 +51,12 @@ Question.prototype.checkAnswer = function(answer) {
   }
 }
 
+var questions = [q1, q2, q3];
+var random = Math.floor(Math.random() * questions.length);
+questions[random].displayQuestion();
+// var answerPrompt = 
+
+
 /*
 --- Expert level ---
 
