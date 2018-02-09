@@ -71,3 +71,73 @@ c) correct answer (I would use a number for this)
 
 11. Display the score in the console. Use yet another method for this.
 */
+
+(function() {
+    function Question(question, answers, correct) {
+    this.question = question;
+    this.answers = answers;
+    this.correct = correct;
+  }
+
+  Question.prototype.displayQuestion = function() {
+    console.log(this.question);
+
+    for (var i = 0; i < this.answers.length; i++) {
+      console.log(i + ': ' + this.answers[i]);
+    }
+  }
+
+  Question.prototype.checkAnswer = function(answer, callback) {
+    var sc; 
+    
+    if (answer === this.correct) {
+      console.log('Correct!');
+      sc = callback(true);
+    } else {
+      console.log('Incorrect. It happens, don\'t let it get to you. Please try again.');
+      sc = callback(false);
+    }
+    this.displayScore(sc);
+  }
+  
+  Question.prototype.displayScore = function(score) {
+    console.log('Your current score is: ' + score);
+    console.log('----------------------------------');
+  }
+
+  var q1 = new Question('What year is it?', ['1953', '1986', '2019', 'Trick question!', 'None of the above'],3);
+
+  var q2 = new Question('What TV show are the years in Question 1 referring to? HINT: Germany', ['Friends-NBC', 'Dark-Netflix', 'Breaking Bad-AMC'],1);
+
+  var q3 = new Question('Do you wish I would stop asking these questions?', ['Yes, please stop the torture!', 'Nope'],0);
+  
+  var questions = [q1, q2, q3];
+  
+  function score() {
+    var sc = 0;
+    return function(correct) {
+      if (correct) {
+        sc++;
+      }
+      return sc;
+    }
+  }
+  
+  var keepScore = score();
+  
+  function nextQuestion() {
+    var randomQuestion = Math.floor(Math.random() * questions.length);
+    questions[randomQuestion].displayQuestion();
+
+    var answerPrompt = prompt('Please select the correct answer.');
+    
+    if(answerPrompt !== 'exit') {
+      questions[randomQuestion].checkAnswer(parseInt(answerPrompt), keepScore);
+      
+      nextQuestion();
+    }
+  }
+  
+  nextQuestion();
+
+})();
