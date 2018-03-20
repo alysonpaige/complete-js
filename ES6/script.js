@@ -1,6 +1,6 @@
 // Variable declarations `let` and `const`
 
-//ES5
+// //ES5
 var name5 = 'Jane Smith';
 var age5 = 23;
 name5 = 'Jane Miller';
@@ -56,3 +56,23 @@ for (let i = 0; i < 5; i++) {
 }
 console.log(i);
 // 0, 1, 2, 3, 4, 23
+
+/////////////////////////////
+// Block and IIFEs
+
+// ES6
+{
+  const a = 1;
+  let b = 2;
+  var c = 3;
+}
+
+// console.log(a + b);
+console.log(c);
+
+// ES5
+(function() {
+  var c = 3;
+})();
+
+console.log(c);
