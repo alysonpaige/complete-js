@@ -21,3 +21,36 @@ All the report data should be printed to the console.
 HINT: Use some of the ES6 features: classes, subclasses, template strings, default parameters, maps, arrow functions, destructuring, etc.
 
 */
+
+class Element {
+
+}
+
+class Park extends Element {
+
+}
+
+class Street extends Element {
+
+}
+
+const allParks = [];
+const allStreets =  [];
+
+function calc(arr) {
+
+}
+
+function reportParks(p) {
+  // Density
+  // Average Age
+  // Parks with more than 100 trees
+}
+
+function reportStreets(s) {
+  // Total and avg length of towns streets
+  // Classify sizes
+}
+
+reportParks(allParks);
+reportStreets(allStreets);
