@@ -23,7 +23,10 @@ HINT: Use some of the ES6 features: classes, subclasses, template strings, defau
 */
 
 class Element {
-
+  constructor(name, buildYear) {
+    this.name = name;
+    this.buildYear = buildYear;
+  }
 }
 
 class Park extends Element {
