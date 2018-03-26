@@ -68,14 +68,21 @@ const allStreets = [new Street('Connecticut Avenue', 1949, 25, 5),
                     new Street('Cinta Costera', 2009, 64, 4)];
 
 function calc(arr) {
-
+  const sum = arr.reduce((prev, cur, index) => prev + cur, 0); // start with sum at 0
+  return [sum, sum / arr.length];
 }
 
 function reportParks(p) {
   console.log('---Parks Report---');
   // Density
+  p.forEach(currentElement => currentElement.treeDensity());
   // Average Age
-  // Parks with more than 100 trees
+  const ages = p.map(currentElement => new Date().getFullYear() - currentElement.buildYear);
+  const [totalAge, avgAge] = calc(ages);
+  console.log(`Our ${p.length} has an avergae of ${avgAge} years.`)
+  // Parks with more than 1000 trees
+  const i = p.map(currentElement => currentElement.numTrees).findIndex(currentElement => currentElement >= 1000);
+  console.log(`${p[i].name} has more than 1000 trees.`);
 }
 
 function reportStreets(s) {
