@@ -32,7 +32,7 @@ class Element {
 class Park extends Element {
   constructor(name, buildYear, area, numTrees) {
     super(name, buildYear);
-    this.area = area;
+    this.area = area; //km2
     this.numTrees = numTrees;
   }
   treeDensity() {
@@ -54,30 +54,32 @@ class Street extends Element {
     classification.set(3, 'normal');
     classification.set(4, 'big');
     classification.set(5, 'huge');
-    console.log(`${this.name} was built in ${buildYear}, and it a ${classification.get(this.size)} street.`);
+    console.log(`${this.name} was built in ${this.buildYear}, and it a ${classification.get(this.size)} street.`);
   }
 }
 
-const allParks = [new Park('Rock Creek Park', 1890, 7.099, 750),
-                  new Park('Turkey Creek Park', 2000, 0.526, 200),
-                  new Park('Everglades National Park', 1947, 6104.60, 964)];
-                  
-const allStreets = [new Street('Connecticut Avenue', 1949, 25, 4),
+const allParks = [new Park('Rock Creek Park', 1890, 7.099, 3541),
+                  new Park('Turkey Creek Park', 2000, 0.526, 215),
+                  new Park('Everglades National Park', 1947, 6104.60, 2103)];
+
+const allStreets = [new Street('Connecticut Avenue', 1949, 25, 5),
                     new Street('Van Ness Street', 1960, 1.5, 2),
                     new Street('Los Rios', 1901, 0.8),
-                    new Street('Cinta Costera', 2009, 64, 5)];
+                    new Street('Cinta Costera', 2009, 64, 4)];
 
 function calc(arr) {
 
 }
 
 function reportParks(p) {
+  console.log('---Parks Report---');
   // Density
   // Average Age
   // Parks with more than 100 trees
 }
 
 function reportStreets(s) {
+  console.log('---Streets Report---');
   // Total and avg length of towns streets
   // Classify sizes
 }
