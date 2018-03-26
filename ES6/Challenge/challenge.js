@@ -58,8 +58,14 @@ class Street extends Element {
   }
 }
 
-const allParks = [];
-const allStreets =  [];
+const allParks = [new Park('Rock Creek Park', 1890, 7.099, 750),
+                  new Park('Turkey Creek Park', 2000, 0.526, 200),
+                  new Park('Everglades National Park', 1947, 6104.60, 964)];
+                  
+const allStreets = [new Street('Connecticut Avenue', 1949, 25, 4),
+                    new Street('Van Ness Street', 1960, 1.5, 2),
+                    new Street('Los Rios', 1901, 0.8),
+                    new Street('Cinta Costera', 2009, 64, 5)];
 
 function calc(arr) {
 
