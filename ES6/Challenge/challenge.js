@@ -54,7 +54,7 @@ class Street extends Element {
     classification.set(3, 'normal');
     classification.set(4, 'big');
     classification.set(5, 'huge');
-    console.log(`${this.name} was built in ${this.buildYear}, and it a ${classification.get(this.size)} street.`);
+    console.log(`${this.name} was built in ${this.buildYear}, and is a ${classification.get(this.size)} street.`);
   }
 }
 
@@ -88,7 +88,10 @@ function reportParks(p) {
 function reportStreets(s) {
   console.log('---Streets Report---');
   // Total and avg length of towns streets
+  const [totalLength, avgLength] = calc(s.map(currentElement => currentElement.length));
+  console.log(`Our ${s.length} streets have a total length of ${totalLength} km, with an average of ${avgLength} km.`);
   // Classify sizes
+  s.forEach(currentElement => currentElement.streetClassification());
 }
 
 reportParks(allParks);
