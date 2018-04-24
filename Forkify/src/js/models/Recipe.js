@@ -20,14 +20,14 @@ export default class Recipe {
     }
   }
 
-  calTime() {
+  calcTime() {
     // Assume we need 15 minutes for each 3 ingredients 
     const numIng = this.ingredients.length;
     const periods = Math.ceil(numIng / 3);
     this.time = periods * 15;
   }
 
-  calServings() {
+  calcServings() {
     this.servings = 4;
   }
 
@@ -46,8 +46,44 @@ export default class Recipe {
       ingredient = ingredient.replace(/ *\([^)]*\) */g, ' ');
 
       // 3. Parse ingredients into count, unit and ingredient
+      const arrIng = ingredient.split(' ');
+      const unitIndex = arrIng.findIndex(el2 => unitsShort.includes(el2));
 
-      return ingredient;
+      let objIng;
+      if (unitIndex > -1) {
+        // There is a unit
+        // ex. 4 1/2 cups, arrCount is [4, 1/2] --> eval("4+1/2") --> 4.5
+        // ex. 4 cups, arrCount is [4]
+        const arrCount = arrIng.slice(0, unitIndex);
+        let count;
+
+        if (arrCount.length === 1) {
+          count = eval(arrIng[0].replace('-', '+'));
+        } else {
+          count = arrIng.slice((0, unitIndex).join('+'));
+        }
+        objIng = {
+          count,
+          unit: arrIng[unitIndex],
+          ingredient: arrIng.slice(unitIndex + 1).join(' ')
+        };
+      } else if (parseInt(arrIng[0], 10)) {
+        // There is no unit, but 1st element is a number
+        objIng = {
+          count: parseInt(arrIng[0], 10),
+          unit: '',
+          ingredient: arrIng.slice(1).join(' ')
+        }
+      } else if (unitIndex === -1) {
+        // There is no unit and no number in 1st position
+        objIng = {
+          count: 1,
+          unit: '',
+          ingredient
+        }
+      }
+
+      return objIng;
     });
     this.ingredients = newIngredients;
   }
