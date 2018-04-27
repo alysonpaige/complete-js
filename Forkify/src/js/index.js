@@ -80,6 +80,7 @@ const controlRecipe = async () => {
       clearLoader();
       recipeView.renderRecipe(state.recipe);
 
+      // FIXME: bug
     } catch (err) {
       alert('Error processing recipe');
     }
